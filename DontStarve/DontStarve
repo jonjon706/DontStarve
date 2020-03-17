@@ -1,0 +1,31 @@
+﻿using System;
+using System.Threading;
+
+namespace DontStarve
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("Hello Adventurer, Are You Ready To Begin?");
+            string response = Console.ReadLine().ToLower();
+            if (response == "yes")
+            {
+                Console.WriteLine("Welcom to The Island of Misfits");
+            }
+            else if(response == "no" || response == "maybe")
+                {
+                Console.WriteLine("Come back later.....");
+                Environment.Exit(1);
+            }
+            Thread.Sleep(1500);
+            Console.WriteLine("What is your name");
+            string name = Console.ReadLine();
+            Thread.Sleep(1000);
+            Console.WriteLine($"Welcome {name}, My is Jonnie");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+    }
+}

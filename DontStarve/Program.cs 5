@@ -1,0 +1,73 @@
+﻿using System;
+using System.Threading;
+
+namespace DontStarve
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("Hello Adventurer, Are You Ready To Begin?");
+            Console.ForegroundColor = ConsoleColor.Green;
+            string response = Console.ReadLine().ToLower();
+            if (response == "yes")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Thread.Sleep(3500);
+                Console.WriteLine("Welcom to The Island of Misfits");
+            }
+            else if(response == "no" || response == "maybe")
+                {
+                Console.WriteLine("Come back later.....");
+                Environment.Exit(1);
+            }
+            Thread.Sleep(3500);
+            Console.WriteLine("What is your name");
+            Console.ForegroundColor = ConsoleColor.Green;
+            string name = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Thread.Sleep(3500);
+            Console.WriteLine($"Welcome, {name}, My is Jonnie");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+
+            Thread.Sleep(3500);
+            Random random1 = new Random();
+            int random = random1.Next(1, 100);
+
+            Console.WriteLine("Guess a number btween 1 and 100");
+            Console.ForegroundColor = ConsoleColor.Green;
+            int guess = int.Parse(Console.ReadLine());
+
+
+            if (guess == random)
+            {
+                Thread.Sleep(2500);
+                Console.WriteLine("You got it right!");
+            }
+            else
+            {
+
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Thread.Sleep(2500);
+                Console.WriteLine(" You got it Wrong!");
+                {
+
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Thread.Sleep(2500);
+                    Console.WriteLine("You see" + name);
+                    Thread.Sleep(3500);
+                    Console.WriteLine("This is a game of survival. The Decisions you make are entireley up to you.");
+                    Thread.Sleep(3500);
+                    Console.WriteLine("A good decision will have you survive Through the night and a bad one will loose you a life");
+                    Thread.Sleep(4500);
+                    Console.WriteLine("You have 3 Lives. If you loose them all your game is done!");
+
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Thread.Sleep(3500);
+                    Console.WriteLine("GoodLuck");
+                }
+            }
+        }
+    }
+}
